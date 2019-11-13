@@ -11,6 +11,7 @@
       <div class="subgrid header">
         <div class="cell"><p>#</p></div>
         <!--<div class="cell"><p>Avatar</p></div>-->
+        <div class="cell"><p>Действия</p></div>
         <div class="cell"><p>Имя</p></div>
         <div class="cell"><p>Фамилия</p></div>
         <div class="cell"><p>Активен</p></div>
@@ -24,6 +25,9 @@
       <div v-for="(item, index) in users" v-show="showUsers" :key="item.id" class="subgrid">
         <div class="cell">
           <p>{{ index + 1 }}</p>
+        </div>
+        <div class="cell">
+          <button class="cell" @click="showClick(item.id)">X</button>
         </div>
         <!--<img v-if="item.avatar" class="cell img" :src="item.avatar" />
         <img
@@ -59,7 +63,8 @@
 
 <script>
 import CoolButton from './CoolButton.vue'
-import axios from 'axios'
+//import axios from 'axios'
+import axiosInstance from '@/utils/http.js'
 export default {
   name: 'UserList',
   components: {
@@ -95,9 +100,12 @@ export default {
       this.showUsers = !this.showUsers
       return this.showUsers
     },
+    showClick(id) {
+      console.log(id)
+    },
     async loadUsers() {
       try {
-        const res = await axios.get('http://localhost:3004/users')
+        const res = await axiosInstance.get('/users')
         this.users = res.data
       } catch (e) {
         console.error(e)
@@ -119,7 +127,7 @@ export default {
 }
 .subgrid {
   display: grid;
-  grid-template-columns: 50px repeat(7, minmax(100px, 1fr));
+  grid-template-columns: 50px repeat(8, minmax(100px, 1fr));
   background: #d9cfc1;
 }
 .header {

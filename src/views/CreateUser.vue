@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>Add create user page here</h1>
-  </div>
+  <CreateUser />
 </template>
+
+<script>
+// @ is an alias to /src
+import CreateUser from '@/components/CreateUser.vue'
+
+export default {
+  name: 'Home',
+  components: {
+    CreateUser
+  }
+}
+</script>

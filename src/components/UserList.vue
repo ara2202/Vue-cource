@@ -26,8 +26,13 @@
         <div class="cell">
           <p>{{ index + 1 }}</p>
         </div>
-        <div class="cell">
-          <button class="cell" @click="showClick(item.id)">X</button>
+        <div class="cell" style="display: flex; flex-direction: column">
+          <button type="button" class="btn btn-warning btn-sm" @click="deleteUser(item)">
+            X
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm">
+            Edit
+          </button>
         </div>
         <!--<img v-if="item.avatar" class="cell img" :src="item.avatar" />
         <img
@@ -100,8 +105,15 @@ export default {
       this.showUsers = !this.showUsers
       return this.showUsers
     },
-    showClick(id) {
-      console.log(id)
+    async deleteUser({ firstName, lastName, id }) {
+      if (confirm(`Вы хотите удалить пользователя ${firstName} ${lastName} ?`)) {
+        try {
+          await axiosInstance.delete(`/users/${id}`)
+          this.users = this.users.filter(item => item.id !== id)
+        } catch (e) {
+          console.error(e)
+        }
+      }
     },
     async loadUsers() {
       try {
@@ -127,7 +139,8 @@ export default {
 }
 .subgrid {
   display: grid;
-  grid-template-columns: 50px repeat(8, minmax(100px, 1fr));
+  grid-template-columns: 50px 50px repeat(7, minmax(50px, 1fr));
+  //grid-template-columns: 50px repeat(8, minmax(max-content, 1fr));
   background: #d9cfc1;
 }
 .header {

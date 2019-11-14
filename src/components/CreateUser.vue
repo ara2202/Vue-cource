@@ -11,6 +11,8 @@
     <input v-model="user.firstName" placeholder="Введите имя пользователя" />
     <p>Фамилия пользователя</p>
     <input v-model="user.lastName" placeholder="Введите фамилию пользователя" />
+    <br/>
+    <br/>
     <input id="checkbox" v-model="user.isActive" type="checkbox" />
     <label for="checkbox">Активен</label>
     <p>Начальный баланс</p>
@@ -27,6 +29,7 @@
 
 <script>
 import axiosInstance from '@/utils/http.js'
+import uuidv4 from 'uuid/v4'
 export default {
   data() {
     return {
@@ -48,8 +51,9 @@ export default {
       const {firstName, lastName, email, phone} = this.user
 
       if (firstName && lastName && email && phone) {
+        const newUser = Object.assign({}, this.user,{id: uuidv4(), registered: Date.toString()})
         // TODO: обернуть в try - catch, показывать сообщение об успешном создании
-        await axiosInstance.post('/users', JSON.stringify(this.user), {
+        await axiosInstance.post('/users', JSON.stringify(newUser), {
           headers: { 'content-type': 'application/json' }
         } )
         this.$router.push('/')

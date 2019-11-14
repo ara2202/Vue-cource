@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": "5dca86da1a86cf5861e7e220",
-      "isActive": false,
-      "balance": "$3,833.93",
-      "picture": "http://placehold.it/100x100",
-      "firstName": "Brandy",
-      "lastName": "Park",
-      "company": "FUELWORKS",
-      "email": "brandy.park@fuelworks.name",
-      "phone": "+7 (863) 408-3943",
-      "registered": "Monday, January 22, 2018 3:30 PM"
-    },
-    {
       "id": "5dca86da054d0b0b5c89fc5e",
       "isActive": true,
       "balance": "$1,814.62",
@@ -47,18 +35,6 @@
       "email": "carole.ellison@zoid.io",
       "phone": "+7 (938) 410-2036",
       "registered": "Saturday, March 25, 2017 4:26 PM"
-    },
-    {
-      "id": "5dca86dab7f0218a5f0415d0",
-      "isActive": false,
-      "balance": "$3,400.53",
-      "picture": "http://placehold.it/100x100",
-      "firstName": "Harriett",
-      "lastName": "Bryant",
-      "company": "COLAIRE",
-      "email": "harriett.bryant@colaire.me",
-      "phone": "+7 (896) 547-2839",
-      "registered": "Tuesday, February 12, 2019 4:00 AM"
     },
     {
       "id": "5dca86da4c75cff94f218145",
@@ -311,42 +287,6 @@
       "email": "jillian.chaney@pheast.us",
       "phone": "+7 (872) 492-3416",
       "registered": "Tuesday, April 5, 2016 3:40 AM"
-    },
-    {
-      "firstName": "Andrey",
-      "lastName": "Reutov",
-      "isActive": true,
-      "balance": "100",
-      "email": "test@mail.com",
-      "phone": "+7123456789",
-      "id": "ApaXk_p"
-    },
-    {
-      "firstName": "sdfsdf",
-      "lastName": "sdfsdf",
-      "isActive": false,
-      "balance": "100",
-      "email": "asdasda",
-      "phone": "asdasd",
-      "id": "tGqb0oI"
-    },
-    {
-      "firstName": "sdfsdf",
-      "lastName": "sdfsdf",
-      "isActive": true,
-      "balance": "100",
-      "email": "sdfsdf",
-      "phone": "sdfsdf",
-      "id": "Vo1lOmF"
-    },
-    {
-      "firstName": "asdasd",
-      "lastName": "asdfasfaf",
-      "isActive": true,
-      "balance": "200",
-      "email": "asdfsdf",
-      "phone": "sdfsdf",
-      "id": "isYvp23"
     }
   ]
 }

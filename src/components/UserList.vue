@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrap">
     <div class="header">
-      <h3>Всего пользователей в таблице: {{ getUsersAmt }}</h3>
+      <h6>Всего пользователей в таблице: {{ getUsersAmt }}</h6>
 
       <CoolButton
         :text="(showUsers ? 'Скрыть' : 'Показать') + ' пользователей'"
@@ -11,7 +11,7 @@
       <div class="subgrid header">
         <div class="cell"><p>#</p></div>
         <!--<div class="cell"><p>Avatar</p></div>-->
-        <div class="cell"><p>Действия</p></div>
+        <div class="cell"><p>Action</p></div>
         <div class="cell"><p>Имя</p></div>
         <div class="cell"><p>Фамилия</p></div>
         <div class="cell"><p>Активен</p></div>
@@ -27,10 +27,10 @@
           <p>{{ index + 1 }}</p>
         </div>
         <div class="cell" style="display: flex; flex-direction: column">
-          <button type="button" class="btn btn-warning btn-sm" @click="deleteUser(item)">
+          <button type="button" class="btn btn-outline-danger btn-sm" @click="deleteUser(item)">
             X
           </button>
-          <button type="button" class="btn btn-secondary btn-sm">
+          <button type="button" class="btn btn-outline-success btn-sm" @click="editUser(item.id)">
             Edit
           </button>
         </div>
@@ -122,6 +122,9 @@ export default {
       } catch (e) {
         console.error(e)
       }
+    },
+    editUser(id) {
+      this.$router.push(`/user/${id}`)
     }
   }
 }
@@ -130,7 +133,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .main-wrap {
-  padding: 1%;
+  //padding: 1%;
 }
 .grid {
   display: grid;
@@ -140,7 +143,6 @@ export default {
 .subgrid {
   display: grid;
   grid-template-columns: 50px 50px repeat(7, minmax(50px, 1fr));
-  //grid-template-columns: 50px repeat(8, minmax(max-content, 1fr));
   background: #d9cfc1;
 }
 .header {
@@ -157,6 +159,6 @@ export default {
 }
 .header {
   position: sticky;
-  top: 0;
+  top: 60px;
 }
 </style>

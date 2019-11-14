@@ -21,18 +21,19 @@
     <input v-model="user.email" placeholder="Введите email пользователя" />
     <p>Phone</p>
     <input v-model="user.phone" placeholder="Введите телефон пользователя" />
-    <CoolButton text="Create User" @click="sendForm"/>
-    <!--<p> <input type="submit" value="Create User"> </p>-->
+    <br/>
+    <br/>
+    <CoolButton text="Save changes" @click="sendForm"/>
+    <!--<p> <input type="submit" value="Сохранить изменения"> </p>-->
   </form>
  
 </template>
 
 <script>
 import axiosInstance from '@/utils/http.js'
-import uuidv4 from 'uuid/v4'
 import CoolButton from './CoolButton.vue'
 export default {
-  components: {
+    components: {
     CoolButton
   },
   data() {
@@ -48,24 +49,29 @@ export default {
       }
     }
   },
+    mounted: function() {
+    this.loadUser(this.$route.params.id)
+  },
    methods: {
+    async loadUser(id) {
+      try {
+        const res = await axiosInstance.get(`/users/${id}`)
+        this.user = res.data
+      } catch (e) {
+        console.error(e)
+      }
+    },
     sendForm: async function () {
-      //e.preventDefault();
-      
+           
       const {firstName, lastName, email, phone} = this.user
 
       if (firstName && lastName && email && phone) {
-        // TODO: обернуть в try - catch, показывать сообщение об успешном создании
-        const date = new Date(Date.now());
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: '2-digit' };
-        const dateStr = date.toLocaleDateString('en-EN',options);
-        const newUser = Object.assign({}, this.user,{id: uuidv4(), registered: dateStr})
         
-        await axiosInstance.post('/users', JSON.stringify(newUser), {
+        await axiosInstance.put(`/users/${this.user.id}`, JSON.stringify(this.user), {
           headers: { 'content-type': 'application/json' }
         } )
         this.$router.push('/')
-        //return true;
+        return true;
       }
 
       this.errors = [];

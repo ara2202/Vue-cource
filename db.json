@@ -3,10 +3,10 @@
     {
       "id": "5dca86da054d0b0b5c89fc5e",
       "isActive": true,
-      "balance": "$1,814.62",
+      "balance": "$2,000,000,000.62",
       "picture": "http://placehold.it/100x100",
-      "firstName": "Blair",
-      "lastName": "Dennis",
+      "firstName": "BlaiARRR",
+      "lastName": "MultiBillionare",
       "company": "ATOMICA",
       "email": "blair.dennis@atomica.us",
       "phone": "+7 (815) 547-3374",
@@ -27,7 +27,7 @@
     {
       "id": "5dca86da121f8b368d502221",
       "isActive": false,
-      "balance": "$3,058.85",
+      "balance": "$999,058.85",
       "picture": "http://placehold.it/100x100",
       "firstName": "Carole",
       "lastName": "Ellison",
@@ -78,7 +78,7 @@
       "balance": "$1,923.22",
       "picture": "http://placehold.it/100x100",
       "firstName": "Doris",
-      "lastName": "Roth",
+      "lastName": "Zombie!!!",
       "company": "ACCUPRINT",
       "email": "doris.roth@accuprint.com",
       "phone": "+7 (908) 483-2397",
@@ -287,6 +287,16 @@
       "email": "jillian.chaney@pheast.us",
       "phone": "+7 (872) 492-3416",
       "registered": "Tuesday, April 5, 2016 3:40 AM"
+    },
+    {
+      "firstName": "Andrey",
+      "lastName": "Reutov",
+      "isActive": true,
+      "balance": "$10,000,000.00",
+      "email": "somemail@mail.com",
+      "phone": "+7-123-456-7890",
+      "id": "73d0de3e-b147-4d09-bd66-45d90893c825",
+      "registered": "Thursday, November 14, 2019, 6:07 PM"
     }
   ]
 }

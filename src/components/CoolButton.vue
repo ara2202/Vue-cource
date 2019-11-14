@@ -24,7 +24,8 @@ export default {
     }
   },
   methods: {
-    onClick: function() {
+    onClick: function(e) {
+      e.preventDefault()
       this.$emit('click')
     }
   }
@@ -37,8 +38,8 @@ $base-color: #2f0000;
 $border-size: 3px;
 
 .wrapper {
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -53,7 +54,7 @@ button {
   letter-spacing: 3px;
   font-size: 12px;
   color: $accent-color;
-  padding: 1% 2%;
+  padding: 0.5% 0.5%;
   border: none;
   background-color: transparent;
   cursor: pointer;

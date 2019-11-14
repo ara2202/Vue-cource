@@ -132,9 +132,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.main-wrap {
-  //padding: 1%;
-}
 .grid {
   display: grid;
   grid-template-columns: 1fr;

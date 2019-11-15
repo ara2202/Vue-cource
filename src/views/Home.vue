@@ -1,7 +1,5 @@
 <template>
-  <div class="home">
-    <UserList msg="Welcome to Your Vue.js App" />
-  </div>
+  <UserList />
 </template>
 
 <script>

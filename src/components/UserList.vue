@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrap">
     <div class="header">
-      <h6>Всего пользователей в таблице: {{ getUsersAmt }}</h6>
+      <h6>Всего пользователей в таблице: {{ getUsersAmount }}</h6>
 
       <CoolButton
         :text="(showUsers ? 'Скрыть' : 'Показать') + ' пользователей'"
@@ -10,7 +10,6 @@
 
       <div class="subgrid header">
         <div class="cell"><p>#</p></div>
-        <!--<div class="cell"><p>Avatar</p></div>-->
         <div class="cell"><p>Action</p></div>
         <div class="cell"><p>Имя</p></div>
         <div class="cell"><p>Фамилия</p></div>
@@ -34,12 +33,6 @@
             Edit
           </button>
         </div>
-        <!--<img v-if="item.avatar" class="cell img" :src="item.avatar" />
-        <img
-          v-else
-          class="cell img"
-          src="https://tool.direktoria.org/static/i/images/no_photo_author.png"
-        />-->
         <div class="cell">
           <p>{{ item.firstName | capitalize }}</p>
         </div>
@@ -67,8 +60,7 @@
 </template>
 
 <script>
-import CoolButton from './CoolButton.vue'
-//import axios from 'axios'
+import CoolButton from '@/components/CoolButton.vue'
 import axiosInstance from '@/utils/http.js'
 export default {
   name: 'UserList',
@@ -93,7 +85,7 @@ export default {
     }
   },
   computed: {
-    getUsersAmt: function() {
+    getUsersAmount: function() {
       return this.users.length
     }
   },

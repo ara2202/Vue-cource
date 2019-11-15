@@ -23,7 +23,6 @@
     <br />
     <br />
     <CoolButton text="Save changes" @click="sendForm" />
-    <!--<p> <input type="submit" value="Сохранить изменения"> </p>-->
   </form>
 </template>
 
@@ -63,7 +62,7 @@ export default {
       const { firstName, lastName, email, phone } = this.user
 
       if (firstName && lastName && email && phone) {
-        await axiosInstance.put(`/users/${this.user.id}`, JSON.stringify(this.user), {
+        await axiosInstance.put(`/users/${this.user.id}`, this.user, {
           headers: { 'content-type': 'application/json' }
         })
         this.$router.push('/')

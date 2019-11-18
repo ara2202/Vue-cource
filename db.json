@@ -265,18 +265,6 @@
       "registered": "Sunday, August 5, 2018 3:35 PM"
     },
     {
-      "id": "5dca86da8b676ee33a0b6f45",
-      "isActive": false,
-      "balance": "$3,271.23",
-      "picture": "http://placehold.it/100x100",
-      "firstName": "Earline",
-      "lastName": "Church",
-      "company": "OLUCORE",
-      "email": "earline.church@olucore.name",
-      "phone": "+7 (997) 483-3995",
-      "registered": "Friday, August 1, 2014 6:57 PM"
-    },
-    {
       "id": "5dca86daf10850a373bbf1cb",
       "isActive": false,
       "balance": "$1,855.26",
@@ -297,6 +285,16 @@
       "phone": "+7-123-456-7890",
       "id": "73d0de3e-b147-4d09-bd66-45d90893c825",
       "registered": "Thursday, November 14, 2019, 6:07 PM"
+    },
+    {
+      "firstName": "Tester",
+      "lastName": "Test",
+      "isActive": true,
+      "balance": "$ 1,000,000",
+      "email": "MAIL@MAIL.com",
+      "phone": "+7 999 999-9999",
+      "id": "5e7af433-cb63-4e77-b6e9-b9303b3e2009",
+      "registered": "Monday, November 18, 2019, 4:22 PM"
     }
   ]
 }

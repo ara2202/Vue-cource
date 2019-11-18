@@ -10,6 +10,7 @@
       <span></span>
       <span></span>
       <span></span>
+
       {{ text }}
     </button>
   </div>
@@ -54,7 +55,7 @@ button {
   letter-spacing: 3px;
   font-size: 12px;
   color: $accent-color;
-  padding: 0.5% 0.5%;
+  padding: 5px;
   border: none;
   background-color: transparent;
   cursor: pointer;

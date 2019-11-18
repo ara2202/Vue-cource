@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 import Home from '@/views/Home.vue'
-import EditUser from '@/views/EditUser.vue'
 
 Vue.use(VueRouter)
 
@@ -15,15 +14,12 @@ const routes = [
   {
     path: '/create',
     name: 'create',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '@/views/CreateUser.vue')
+    component: () => import('@/views/CreateUser.vue')
   },
   {
     path: '/user/:id',
     name: 'edit',
-    component: EditUser
+    component: () => import('@/views/EditUser.vue')
   }
 ]
 

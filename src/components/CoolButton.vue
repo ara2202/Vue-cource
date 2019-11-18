@@ -25,8 +25,8 @@ export default {
     }
   },
   methods: {
-    onClick: function(e) {
-      e.preventDefault()
+    onClick: function() {
+      //e.preventDefault()
       this.$emit('click')
     }
   }

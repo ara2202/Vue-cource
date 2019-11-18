@@ -27,8 +27,6 @@ export default {
   },
   methods: {
     sendForm: async function() {
-      //e.preventDefault();
-
       const { firstName, lastName, email, phone } = this.user
 
       if (firstName && lastName && email && phone) {

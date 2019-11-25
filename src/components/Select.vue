@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <label for="Select">На странице по</label>
-    <select id="Select" v-model.number="localAmountPerPage" class="form-control">
+    <select id="Select" class="form-control" @input="changeAmountPerPage">
       <option>5</option>
       <option>10</option>
       <option>15</option>
@@ -23,9 +23,6 @@ export default {
       required: true
     }
   },
-  data: () => ({
-    localAmountPerPage: null
-  }),
   watch: {
     localAmountPerPage: {
       handler() {
@@ -33,8 +30,11 @@ export default {
       }
     }
   },
-  created() {
-    this.localAmountPerPage = this.amountPerPage
+  methods: {
+    changeAmountPerPage(e) {
+      this.$emit('changeAmountPerPage', e.target.value)
+      //console.log(e)
+    }
   }
 }
 </script>

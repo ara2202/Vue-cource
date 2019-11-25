@@ -66,6 +66,12 @@
         placeholder="+7 "
       />
     </div>
+    <div class="form-group">
+      <label>Дата регистрации</label>
+      <input v-model="localUser.registered" type="text" class="form-control" />
+    </div>
+
+    <DatePicker v-model="localUser.registered" />
 
     <br />
     <br />
@@ -78,7 +84,8 @@
 import CoolButton from './CoolButton.vue'
 export default {
   components: {
-    CoolButton
+    CoolButton,
+    DatePicker: () => import('@/components/DatePicker.vue')
   },
   model: {
     prop: 'user',
@@ -105,7 +112,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.user)
     this.localUser = Object.assign({}, this.user)
   },
   methods: {

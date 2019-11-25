@@ -4,7 +4,7 @@
       <div class="pagination">
         <Pagination v-model="activePage" :pages-amount="getPagesAmount" />
       </div>
-      <div><Select v-model="amountPerPage" class="select" /></div>
+      <div><Select v-model.number="amountPerPage" class="select" /></div>
 
       <div>
         <p>Всего пользователей: {{ getTotalRows }}</p>

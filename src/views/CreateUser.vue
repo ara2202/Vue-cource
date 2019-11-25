@@ -43,9 +43,7 @@ export default {
           const dateStr = date.toLocaleDateString('en-EN', options)
           const newUser = Object.assign({}, this.user, { id: uuidv4(), registered: dateStr })
 
-          await axiosInstance.post('/users', JSON.stringify(newUser), {
-            headers: { 'content-type': 'application/json' }
-          })
+          await axiosInstance.post('/users', newUser)
           this.$router.push('/')
         } catch (e) {
           console.error(e)

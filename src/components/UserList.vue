@@ -12,8 +12,8 @@
       <div class="cell"><p>Зарегистрирован</p></div>
     </div>
 
-    <div class="grid">
-      <div v-for="(item, index) in users" v-show="showUsers" :key="item.id" class="subgrid">
+    <div v-show="showUsers" class="grid">
+      <div v-for="(item, index) in users" :key="item.id" class="subgrid">
         <div class="cell">
           <p>{{ (activePage - 1) * amountPerPage + index + 1 }}</p>
         </div>
@@ -71,10 +71,6 @@ export default {
     amountPerPage: {
       type: Number,
       required: true
-    },
-    totalRows: {
-      type: Number,
-      default: 0
     },
     showUsers: {
       type: Boolean,

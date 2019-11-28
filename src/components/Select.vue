@@ -23,17 +23,9 @@ export default {
       required: true
     }
   },
-  watch: {
-    localAmountPerPage: {
-      handler() {
-        this.$emit('changeAmountPerPage', this.localAmountPerPage)
-      }
-    }
-  },
   methods: {
     changeAmountPerPage(e) {
       this.$emit('changeAmountPerPage', e.target.value)
-      //console.log(e)
     }
   }
 }

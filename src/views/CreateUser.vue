@@ -6,7 +6,7 @@
 
 <script>
 import axiosInstance from '@/utils/http.js'
-import uuidv4 from 'uuid/v4'
+//import uuidv4 from 'uuid/v4'
 import UserForm from '@/components/UserForm.vue'
 
 export default {
@@ -32,16 +32,17 @@ export default {
       if (firstName && lastName && email && phone) {
         try {
           const date = new Date(Date.now())
-          const options = {
+          /*const options = {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
             day: 'numeric',
             hour: 'numeric',
             minute: '2-digit'
-          }
-          const dateStr = date.toLocaleDateString('en-EN', options)
-          const newUser = Object.assign({}, this.user, { id: uuidv4(), registered: dateStr })
+          }*/
+          //const dateStr = date.toLocaleDateString('ru-RU', options)
+          const dateStr = date.toLocaleDateString('ru-RU')
+          const newUser = Object.assign({}, this.user, { id: 0, registered: dateStr })
 
           await axiosInstance.post('/users', newUser)
           this.$router.push('/')

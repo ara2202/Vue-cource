@@ -1,51 +1,55 @@
 <template>
   <div class="main-wrap">
     <div class="subgrid header">
-      <div class="cell"><p>#</p></div>
-      <div class="cell"><p>Action</p></div>
-      <div class="cell"><p>Имя</p></div>
-      <div class="cell"><p>Фамилия</p></div>
-      <div class="cell"><p>Активен</p></div>
-      <div class="cell"><p>Баланс</p></div>
-      <div class="cell"><p>Email</p></div>
-      <div class="cell"><p>Телефон</p></div>
-      <div class="cell"><p>Зарегистрирован</p></div>
+      <slot name="table-header">
+        <div class="cell"><p>#</p></div>
+        <div class="cell"><p>Action</p></div>
+        <div class="cell"><p>Имя</p></div>
+        <div class="cell"><p>Фамилия</p></div>
+        <div class="cell"><p>Активен</p></div>
+        <div class="cell"><p>Баланс</p></div>
+        <div class="cell"><p>Email</p></div>
+        <div class="cell"><p>Телефон</p></div>
+        <div class="cell"><p>Зарегистрирован</p></div>
+      </slot>
     </div>
 
     <div v-show="showUsers" class="grid">
       <div v-for="(item, index) in users" :key="item.id" class="subgrid">
-        <div class="cell">
-          <p>{{ (activePage - 1) * amountPerPage + index + 1 }}</p>
-        </div>
-        <div class="cell" style="display: flex; flex-direction: column">
-          <button type="button" class="btn btn-outline-danger btn-sm" @click="deleteUser(item)">
-            X
-          </button>
-          <button type="button" class="btn btn-outline-success btn-sm" @click="editUser(item.id)">
-            Edit
-          </button>
-        </div>
-        <div class="cell">
-          <p>{{ item.firstName | capitalize }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.lastName | capitalize }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.isActive }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.balance }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.email }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.phone }}</p>
-        </div>
-        <div class="cell">
-          <p>{{ item.registered }}</p>
-        </div>
+        <slot name="table-body">
+          <div class="cell">
+            <p>{{ startIndexNumber + index + 1 }}</p>
+          </div>
+          <div class="cell" style="display: flex; flex-direction: column">
+            <button type="button" class="btn btn-outline-danger btn-sm" @click="deleteUser(item)">
+              X
+            </button>
+            <button type="button" class="btn btn-outline-success btn-sm" @click="editUser(item.id)">
+              Edit
+            </button>
+          </div>
+          <div class="cell">
+            <p>{{ item.firstName | capitalize }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.lastName | capitalize }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.isActive }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.balance }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.email }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.phone }}</p>
+          </div>
+          <div class="cell">
+            <p>{{ item.registered }}</p>
+          </div>
+        </slot>
       </div>
     </div>
   </div>
@@ -64,11 +68,7 @@ export default {
       type: Array,
       required: true
     },
-    activePage: {
-      type: Number,
-      required: true
-    },
-    amountPerPage: {
+    startIndexNumber: {
       type: Number,
       required: true
     },

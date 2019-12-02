@@ -295,6 +295,26 @@
       "phone": "+7 999 999-9999",
       "id": "5e7af433-cb63-4e77-b6e9-b9303b3e2009",
       "registered": "Monday, November 18, 2019, 4:22 PM"
+    },
+    {
+      "firstName": "Name",
+      "lastName": "SurName",
+      "isActive": true,
+      "balance": "$1000",
+      "email": "mail@mail.com",
+      "phone": "+7123456789",
+      "registered": "02.12.2019",
+      "id": "wC2fNGQ"
+    },
+    {
+      "firstName": "Name",
+      "lastName": "SurName",
+      "isActive": true,
+      "balance": "$1000",
+      "email": "mail@mail.com",
+      "phone": "+7123456789",
+      "registered": "02.12.2019",
+      "id": "D4RRvAm"
     }
   ]
 }

@@ -14,9 +14,7 @@
       </div>
     </div>
     <UserList
-      :active-page="activePage"
-      :amount-per-page="amountPerPage"
-      :total-rows="getTotalRows"
+      :start-index-number="(activePage - 1) * amountPerPage"
       :users="getUsersToShow"
       :show-users="showUsers"
       @editUser="editUser"
@@ -46,7 +44,6 @@ export default {
   data: () => ({
     amountPerPage: 10,
     activePage: 1,
-    usersToShow: [],
     showUsers: true
   }),
   computed: {
@@ -69,9 +66,6 @@ export default {
     amountPerPage: {
       handler: 'updateActivePage'
     }
-  },
-  created() {
-    this.usersToShow = this.users.slice(0, this.amountPerPage)
   },
   methods: {
     toggleShowUsers() {

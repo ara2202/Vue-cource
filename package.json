@@ -10,7 +10,7 @@
     "start": "concurrently \"npm run fake\" \"npm run serve\""
   },
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "0.21.1",
     "bootstrap": "4.3.1",
     "core-js": "3.3.2",
     "flatpickr": "^4.6.3",
